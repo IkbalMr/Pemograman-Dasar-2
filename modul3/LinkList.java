@@ -12,7 +12,7 @@ public class LinkList {
 
     void print() {
         Node current = head;
-        if (head == null) {
+        if (head == null && tail == null) {
             System.out.println("Data kosong");
             return;
         }
@@ -82,17 +82,17 @@ public class LinkList {
     }
 
     void push(Node new_node) {
-        if (head == null) {
+        if (head == null && tail == null) {
             this.head = new_node;
             this.tail = new_node;
         } else {
             this.tail.set_next(new_node);
-            new_node.prev = this.tail;
+            this.tail = new_node;
         }
     }
 
     void insert(Node new_node) {
-        if (head == null) {
+        if (head == null && tail == null) {
             this.head = new_node;
             this.tail = new_node;
         } else if (new_node.data <= this.head.data) {
@@ -103,10 +103,7 @@ public class LinkList {
             this.tail = new_node;
         } else {
             Node position = head;
-            while (position != null) {
-                if(position.next == null){
-                    break;
-                }
+            while (position.data < new_node.data) {
                 position = position.next;
             }
             Node previous_position = position.prev;

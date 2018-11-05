@@ -8,10 +8,10 @@ public class Test {
         LinkList a = new LinkList();
         Scanner in = new Scanner(System.in);
         a.print(); // should show nothing
-        a.insert(new Node(5));
-        a.insert(new Node(4));
-        a.insert(new Node(7));
-        a.insert(new Node(6));
+        a.push(new Node(5));
+        a.push(new Node(4));
+        a.push(new Node(7));
+        a.push(new Node(6));
         a.print(); // should show 4 5 6 7
         a.delete(a.head);
         a.print(); // should show 5 6 7
